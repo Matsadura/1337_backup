@@ -6,7 +6,7 @@
 /*   By: zzaoui <zzaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 18:31:09 by zzaoui            #+#    #+#             */
-/*   Updated: 2024/06/30 17:19:04 by zzaoui           ###   ########.fr       */
+/*   Updated: 2024/06/30 20:28:31 by zzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 unsigned int	ft_strlen(char *str)
@@ -27,7 +27,6 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 
 	if (size == 0)
 		return (ft_strlen(src));
-
 	i = 0;
 	while (src[i] && i < size - 1)
 	{

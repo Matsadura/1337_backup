@@ -6,7 +6,7 @@
 /*   By: zzaoui <zzaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:21:39 by zzaoui            #+#    #+#             */
-/*   Updated: 2024/06/29 17:34:49 by zzaoui           ###   ########.fr       */
+/*   Updated: 2024/06/30 21:27:23 by zzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strcapitalize(char *str)
 	i = 1;
 	while (str[i] != '\0')
 	{
-		if (str[i] == ' ' || str[i] == '-' || str[i] == '+')
+		if (str[i] < 48 || (str[i] > 57 && str[i] < 65)
+			|| (str[i] > 90 && str[i] < 97) || str[i] > 122)
 		{
 			if (str[i + 1] != '\0' && str[i + 1] >= 'a' && str[i + 1] <= 'z')
 				str[i + 1] -= 32;
@@ -27,8 +28,8 @@ char	*ft_strcapitalize(char *str)
 		else
 		{
 			if (str[i] >= 'A' && str[i] <= 'Z'
-				&& (str[i - 1] != ' '
-					&& str[i - 1] != '-' && str[i - 1] != '+'))
+				&& (str[i] < 48 || (str[i] > 57 && str[i] < 65)
+					|| (str[i] > 90 && str[i] < 97) || str[i] > 122))
 				str[i] += 32;
 		}
 		i++;

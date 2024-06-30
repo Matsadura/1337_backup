@@ -11,6 +11,7 @@ int main() {
     char test3[] = "Hello World";
     char test4[] = "HELLO-WORLD";
     char test5[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+    char test6[] = "salut<comment>tu{vas ? 42mots[quarante-deux; cinquante+et+un";
 
     printf("Original string 1: %s\n", test1);
     printf("Capitalized string 1: %s\n", ft_strcapitalize(test1));
@@ -26,6 +27,9 @@ int main() {
 
     printf("Original string 5: %s\n", test5);
     printf("Capitalized string 5: %s\n", ft_strcapitalize(test5));
+
+    printf("Original string 6: %s\n", test6);
+    printf("Capitalized string 6: %s\n", ft_strcapitalize(test6));
     return 0;
 }
 
