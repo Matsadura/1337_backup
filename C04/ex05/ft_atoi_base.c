@@ -71,33 +71,40 @@ int	ft_isvalid(char *base)
 	return (0);
 }
 
+int	get_base_index(char c, char *base)
+{
+	int	i;
+
+	i = 0;
+	while (i < ft_strlen(base))
+	{
+		if (c == base[i])
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
 int	ft_atoi_base(char *str, char *base)
 {
-  int   i;
+	int		i;
 	int		sign;
 	int		index;
 	int		result;
-	int		base_length;
 	char	*clean_string;
 
-  if (ft_isvalid(base) == 1)
-    return (0);
+	if (ft_isvalid(base) == 1)
+		return (0);
 	sign = 0;
 	clean_string = ft_whitespace_signs(str, &sign);
 	result = 0;
 	index = 0;
-	base_length = ft_strlen(base);
-
 	while (clean_string[index] != '\0')
 	{
-    i = 0;
-    while (i < base_length)
-    {
-      if (clean_string[index] == base[i])
-        break;
-      i++;
-    }
-		result = result * base_length + i;
+		if (get_base_index(clean_string[index], base) == -1)
+			break ;
+		i = get_base_index(clean_string[index], base);
+		result = result * ft_strlen(base) + i;
 		index++;
 	}
 	if (sign == 1)
