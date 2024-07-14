@@ -12,6 +12,13 @@
 
 int	ft_isvalid(char *base);
 
+int	ft_isspace(char c)
+{
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
+}
+
 unsigned int	ft_strlen(char *str)
 {
 	int	len;

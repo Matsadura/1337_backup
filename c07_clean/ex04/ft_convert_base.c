@@ -14,6 +14,7 @@
 
 unsigned int	ft_strlen(char *str);
 int				ft_atoi_base(char *str, char *base);
+int				ft_isspace(char c);
 
 int	ft_isvalid(char *base)
 {
@@ -21,11 +22,11 @@ int	ft_isvalid(char *base)
 	int	j;
 
 	i = 0;
-	while (base[i++] != '\0')
+	while (base[i] != '\0')
 	{
-		if (base[i] == ' ' || (base[i] <= 13 && base[i] >= 9)
-			|| base[i] == '+' || base[i] == '-')
+		if (ft_isspace(base[i]) || base[i] == '+' || base[i] == '-')
 			return (1);
+		i++;
 	}
 	if (i == 0 || i == 1)
 		return (1);
